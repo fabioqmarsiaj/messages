@@ -9,11 +9,7 @@ interface Repository {
 
 @Injectable()
 export class MessagesService {
-  messageRepo: Repository;
-
-  constructor(repo: Repository) {
-    this.messageRepo = repo;
-  }
+  constructor(public messageRepo: MessagesRepository) {}
 
   findOne(id: string) {
     return this.messageRepo.findOne(id);
